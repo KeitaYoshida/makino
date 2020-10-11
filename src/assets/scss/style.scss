@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Noto Serif JP';
+  src: url('../fonts/NotoSerifJP-Regular.otf') format('opentype');
+}
+
+* {
+  font-family: 'Noto Serif JP', 'Roboto', sans-serif !important;
+}
+$body-font-family: 'Noto Serif JP';
+$title-font: 'Noto Serif JP';
+
+.v-application {
+  font-family: $body-font-family, sans-serif !important;
+  .title,
+  .display-3,
+  .headline,
+  .display-1,
+  .display-2 {
+    font-family: $title-font, sans-serif !important;
+  }
+}

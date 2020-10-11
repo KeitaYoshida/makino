@@ -7,12 +7,13 @@
     dark
     elevate-on-scroll
   >
-    <v-img
+    <!-- <v-img
       alt="Alpha Construction"
       class="shrink"
       max-width="60%"
       src="/static/alpha-construction-logo.png"
-    />
+    /> -->
+    <span class="logo">明信塗装工業</span>
     <v-spacer />
     <v-toolbar-items v-if="$vuetify.breakpoint.mdAndUp">
       <v-btn
@@ -34,43 +35,50 @@
 </template>
 
 <script>
-  // Utilities
-  import { mapMutations } from 'vuex'
+// Utilities
+import { mapMutations } from 'vuex';
 
-  export default {
-    data: () => ({
-      isScrolling: false
-    }),
+export default {
+  data: () => ({
+    isScrolling: false
+  }),
 
-    computed: {
-      items () {
-        return [
-          {
-            'to': '/',
-            'text': 'Home'
-          },
-          {
-            'to': '/services',
-            'text': 'Services'
-          },
-          {
-            'to': '/projects',
-            'text': 'Projects'
-          },
-          {
-            'to': '/contact',
-            'text': 'Contact'
-          }
-        ]
-      }
-    },
+  computed: {
+    items() {
+      return [
+        {
+          to: '/',
+          text: 'Home'
+        },
+        {
+          to: '/services',
+          text: 'Services'
+        },
+        {
+          to: '/projects',
+          text: 'Projects'
+        },
+        {
+          to: '/contact',
+          text: 'Contact'
+        }
+      ];
+    }
+  },
 
-    methods: {
-      ...mapMutations(['toggleDrawer']),
-      onScroll () {
-        this.isScrolling = (window.pageYOffset ||
-          document.documentElement.scrollTop || 0) > 25
-      }
+  methods: {
+    ...mapMutations(['toggleDrawer']),
+    onScroll() {
+      this.isScrolling =
+        (window.pageYOffset || document.documentElement.scrollTop || 0) > 25;
     }
   }
+};
 </script>
+
+<style lang="scss" scoped>
+.logo {
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+}
+</style>
